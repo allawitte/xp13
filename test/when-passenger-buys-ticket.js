@@ -6,7 +6,7 @@ var Passenger = require('../src/passenger');
 
 
 suite('when going to pay for a ticket', function () {
-    test(' - I get 50% discount as student', function(){
+    test(' - I get 100% discount as general passenger', function(){
         let passenger = new Passenger('general');
         let ticket = new Ticket();
         ticket.giveTicketToPassenger(passenger)
