@@ -2,14 +2,14 @@
 "use strict";
 var assert = require('chai').assert;
 var Ticket = require('../src/ticket');
-var Passenger = require('../src/passenger');
+var PassengerBuilder = require('../test/dsl/passenger-builder');
 
 
 suite('when going to pay for a ticket', function () {
     test(' - I get 100% discount as general passenger', function(){
-        let passenger = new Passenger('general');
+        let passenger = new PassengerBuilder('general');
         let ticket = new Ticket();
-        ticket.giveTicketToPassenger(passenger)
+        ticket.giveTicketToPassenger(passenger);
         assert.equal(passenger.hasTicketFor(), '100 rur');
     });
 });
