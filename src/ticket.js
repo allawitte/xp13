@@ -1,15 +1,21 @@
 'use strict';
 class Ticket {
-    constructor(){
+    constructor(amount){
        this._ticket = {
-           'general': '100 rur',
-           'student': '50 rur',
-           'pension': '0 rur'
+           'general': 100,
+           'student': 50,
+           'pension': 0
        }
+        this._amount = amount;
+
+
     }
-    giveTicketToPassenger(passenger){
-        passenger.buyTicket(this._ticket[passenger.status]);
-        return this._ticket[passenger.status];
+    giveTicket(passenger){
+        this._passengerStatus = passenger.status;
+    }
+    get price(){
+        console.log('this._ticket[this._passengerStatus]', this._ticket[this._passengerStatus]);
+        return this._ticket[this._passengerStatus]*this._amount + ' rur';
     }
 }
 

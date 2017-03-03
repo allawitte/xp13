@@ -30,6 +30,7 @@ class Passenger {
     get status(){
         return this._status;
     }
+    
     hasTicketFor(){
         return this._tiketCost;
     }

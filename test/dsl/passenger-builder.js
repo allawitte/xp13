@@ -1,32 +1,20 @@
 'use strict';
 let Ticket = require('../../src/ticket');
+let Passenger = require('../../src/passenger');
 class PassengerBuilder {
-    constructor(){
-        this._ticket = '';
+    constructor() {
+        this._ticketType = '';
         this._tiketCost = '';
 
     }
-    isGeneralPassenger(){
-        this._ticket = 'general';
-        return 'general';
+
+    withStatus(_status) {
+        this._ticketType = _status;
+        return this;
     }
-    isStudent(){
-        this._ticket = 'student';
-        return 'student';
-    }
-    isPensioner(){
-        this._ticket = 'pensioner';
-        return 'pensioner';
-    }
-    buyTicket(ticket){
-        this._tiketCost = ticket;
-    }
-    hasTicketFor(){
-        return this._tiketCost;
-    }
-    pay(){
-        let ticket = new Ticket();
-        
+
+    pay() {
+        return new Passenger(this._ticketType);
     }
 }
 
