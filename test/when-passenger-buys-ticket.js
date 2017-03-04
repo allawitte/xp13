@@ -1,7 +1,5 @@
-'use strict';
 "use strict";
 var assert = require('chai').assert;
-var Ticket = require('../src/ticket');
 var PassengerBuilder = require('../test/dsl/passenger-builder');
 var TicketBuilder = require('../test/dsl/ticket-builder');
 

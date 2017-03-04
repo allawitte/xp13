@@ -1,7 +1,7 @@
 'use strict';
 class Passenger {
-    constructor(status) {
-        this._route = '';
+    constructor(status, route) {
+        this._route = route;
         this._hasTicket = false;
         this._status = status;
         this._tiketCost = '';

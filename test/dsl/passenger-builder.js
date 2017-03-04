@@ -1,10 +1,10 @@
 'use strict';
-let Ticket = require('../../src/ticket');
 let Passenger = require('../../src/passenger');
 class PassengerBuilder {
     constructor() {
         this._ticketType = '';
         this._tiketCost = '';
+        this._busStop = '';
 
     }
 
@@ -13,8 +13,17 @@ class PassengerBuilder {
         return this;
     }
 
+    withDestination(busStop){
+        this._busStop = busStop;
+        return this;
+    }
+
     pay() {
-        return new Passenger(this._ticketType);
+        return new Passenger(this._ticketType, this._busStop);
+    }
+    
+    checkRoute(){
+        return new Passenger(this._ticketType, this._busStop);
     }
 }
 

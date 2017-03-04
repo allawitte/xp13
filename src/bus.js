@@ -2,6 +2,9 @@
 class Bus {
     constructor() {
         this._isReady = false;
+        this._busStops = [
+            'stop_1', 'stop_2', 'stop_3', 'stop_4', 'stop_5'
+        ];
     }
 
     takeDriver(driver) {
@@ -13,13 +16,11 @@ class Bus {
         return this._isReady;
     }
 
-    currentRouteIncludes(route) {
+    currentRouteIncludes(passenger) {
         return true;
 
     }
-    sellTicket(passenger){
-        passenger.ticket = true
-    }
+
 
 }
 module.exports = Bus;

@@ -1,0 +1,18 @@
+'use strict';
+var assert = require('chai').assert;
+var PassengerBuilder = require('../test/dsl/passenger-builder');
+var Bus = require('../src/bus');
+
+
+suite('when asks for a bus stop', function () {
+    test(' - this bus has this bus stop', function(){
+        let passenger = new PassengerBuilder()
+            .withDestination('stop_3')
+            .checkRoute();
+        let bus = new Bus();
+        assert.equal(bus.currentRouteIncludes(passenger), true);
+    });
+});
+/**
+ * Created by HP on 3/3/2017.
+ */
