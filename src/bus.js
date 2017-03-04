@@ -18,14 +18,26 @@ class Bus {
     
     letIn(passenger){
         if (passenger.thicket || passenger.hasPrePaydCard()){
+            passenger.pass = true;
             return true;
+
         }
-        else return false;
+        else {
+            passenger.pass = false;
+            return false;
+        }
         
     }
 
     currentRouteIncludes(passenger) {
-        return this._isHasRoute(passenger.route);
+        if(this._isHasRoute(passenger.route)){
+            passenger.pass = true;
+            return true;
+        }
+        else {
+            passenger.pass = false;
+            return false;
+        }
     }
     _isHasRoute(route){
         if(this._busStops.indexOf(route) > -1){

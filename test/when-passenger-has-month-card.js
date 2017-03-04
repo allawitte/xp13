@@ -7,10 +7,11 @@ var Bus = require('../src/bus');
 suite('when passenger has a month card', function () {
     test(' - bus driver lets him in', function () {
         let passenger = new PassengerBuilder()
-            .withPrePydCard(true)
+            .withPrePaydCard(true)
             .goIn();
         let bus = new Bus();
-        assert.equal(bus.letIn(passenger), true);
+        bus.letIn(passenger);
+        assert.equal(passenger.pass, true);
     });
 });
 /**

@@ -19,8 +19,9 @@ class PassengerBuilder {
         return this;
     }
 
-    withPrePydCard(prePaydCard){
+    withPrePaydCard(prePaydCard){
         this._prePaydCard = prePaydCard;
+        return this;
     }
 
 

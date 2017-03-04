@@ -1,11 +1,20 @@
 'use strict';
 class Passenger {
-    constructor(status = '', route = '', monthCard = false) {
+    constructor(status = '', route = '', prePaydCard = false) {
         this._route = route;
         this._hasTicket = false;
         this._status = status;
         this._tiketCost = '';
         this._prePaydCard = prePaydCard;
+        this._accepted = false;
+    }
+    
+    set pass(isAccepted){
+        this._accepted = isAccepted;
+    }
+    
+    get pass(){
+        return this._accepted;
     }
     
     hasPrePaydCard(){

@@ -10,7 +10,8 @@ suite('when asks for a bus stop', function () {
             .withDestination('stop_3')
             .goIn();
         let bus = new Bus();
-        assert.equal(bus.currentRouteIncludes(passenger), true);
+        bus.currentRouteIncludes(passenger);
+        assert.equal(passenger.pass, true);
     });
 });
 /**
