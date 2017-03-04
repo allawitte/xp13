@@ -5,11 +5,11 @@ class Passenger {
         this._hasTicket = false;
         this._status = status;
         this._tiketCost = '';
-        this._monthCard = monthCard;
+        this._prePaydCard = prePaydCard;
     }
     
-    hasMonthCard(){
-        return this._monthCard;
+    hasPrePaydCard(){
+        return this._prePaydCard;
     }
 
    
@@ -19,6 +19,10 @@ class Passenger {
     
     set ticket(value){
         this._hasTicket = value;
+    }
+    
+    get ticket(){
+        return this._hasTicket;
     }
 
    

@@ -15,6 +15,14 @@ class Bus {
     isReadyForTrip() {
         return this._isReady;
     }
+    
+    letIn(passenger){
+        if (passenger.thicket || passenger.hasPrePaydCard()){
+            return true;
+        }
+        else return false;
+        
+    }
 
     currentRouteIncludes(passenger) {
         return this._isHasRoute(passenger.route);

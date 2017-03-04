@@ -12,9 +12,9 @@ class Ticket {
     }
     giveTicket(passenger){
         this._passengerStatus = passenger.status;
+        passenger.ticket = true;
     }
     get price(){
-        console.log('this._ticket[this._passengerStatus]', this._ticket[this._passengerStatus]);
         return this._ticket[this._passengerStatus]*this._amount + ' rur';
     }
 }
