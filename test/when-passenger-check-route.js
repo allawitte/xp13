@@ -8,7 +8,7 @@ suite('when asks for a bus stop', function () {
     test(' - this bus has this bus stop', function(){
         let passenger = new PassengerBuilder()
             .withDestination('stop_3')
-            .checkRoute();
+            .goIn();
         let bus = new Bus();
         assert.equal(bus.currentRouteIncludes(passenger), true);
     });

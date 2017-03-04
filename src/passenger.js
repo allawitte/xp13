@@ -1,21 +1,18 @@
 'use strict';
 class Passenger {
-    constructor(status, route) {
+    constructor(status = '', route = '', monthCard = false) {
         this._route = route;
         this._hasTicket = false;
         this._status = status;
         this._tiketCost = '';
+        this._monthCard = monthCard;
+    }
+    
+    hasMonthCard(){
+        return this._monthCard;
     }
 
-    buyTicket(ticket){
-        this._tiketCost = ticket;
-    }
-
-    askRoute(currentRoute) {
-        this._route = currentRoute;
-        return this._route;
-    }
-
+   
     get route() {
         return this._route;
     }
@@ -24,9 +21,7 @@ class Passenger {
         this._hasTicket = value;
     }
 
-    get ticket(){
-        return this._hasTicket;
-    }
+   
     get status(){
         return this._status;
     }

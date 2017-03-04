@@ -5,6 +5,7 @@ class PassengerBuilder {
         this._ticketType = '';
         this._tiketCost = '';
         this._busStop = '';
+        this._prePaydCard = '';
 
     }
 
@@ -18,12 +19,14 @@ class PassengerBuilder {
         return this;
     }
 
-    pay() {
-        return new Passenger(this._ticketType, this._busStop);
+    withPrePydCard(prePaydCard){
+        this._prePaydCard = prePaydCard;
     }
+
+
     
-    checkRoute(){
-        return new Passenger(this._ticketType, this._busStop);
+    goIn(){
+        return new Passenger(this._ticketType, this._busStop, this._prePaydCard);
     }
 }
 

@@ -14,7 +14,7 @@ suite('when going to pay for a ticket', function () {
 
         let passenger = new PassengerBuilder()
             .withStatus('general')
-            .pay();
+            .goIn();
 
         ticket.giveTicket(passenger);
         assert.equal(ticket.price, '100 rur');
