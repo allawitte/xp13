@@ -17,8 +17,11 @@ class Bus {
     }
 
     currentRouteIncludes(passenger) {
-        return true;
-
+        if(this._busStops.indexOf(passenger.route) > -1){
+            return true; 
+        }
+        
+        else return false;
     }
 
 
