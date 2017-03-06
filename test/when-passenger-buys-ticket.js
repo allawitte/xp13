@@ -5,7 +5,7 @@ var TicketBuilder = require('../test/dsl/ticket-builder');
 
 
 suite('when going to pay for a ticket', function () {
-    test(' - I get 100% discount as general passenger', function(){
+    test(' - I have to pay full price as general passenger', function(){
 
         let ticket = new TicketBuilder()
             .withType('general')
